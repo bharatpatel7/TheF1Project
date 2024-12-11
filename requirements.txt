@@ -1,4 +1,8 @@
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install pandas matplotlib seaborn requests numpy plotly ipywidgets ipython 
-pip freeze > requirements.txt
+pandas
+matplotlib
+seaborn
+requests
+numpy
+plotly
+ipywidgets
+ipython
