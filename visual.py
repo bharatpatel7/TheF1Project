@@ -68,6 +68,8 @@ print(lap_times.head())
 avg_lap_times = lap_times.groupby('driverId')['time'].mean().reset_index()
 avg_lap_times['time'] = avg_lap_times['time'].dt.total_seconds() / 60  # Converting to minutes
 
+avg_lap_times = avg_lap_times.sort_values(by='time', ascending=True)
+
 # Plotting average lap times
 plt.figure(figsize=(10, 6))
 sns.barplot(data=avg_lap_times, x='driverId', y='time', hue='driverId', palette='coolwarm')
@@ -82,6 +84,7 @@ plt.show()
 #plotting Pit Stops
 plt.figure(figsize=(10, 6))
 pit_stops_count = pit_stops.groupby('driverId')['stop'].nunique().reset_index()
+pit_stops_count = pit_stops_count.sort_values(by='stop', ascending=True)
 sns.barplot(data=pit_stops_count, x='driverId', y='stop',hue='driverId', palette='viridis')
 plt.title('Total pit stops per driver')
 plt.xlabel('Driver ID')
