@@ -11,7 +11,7 @@ import plotly.express as px
 from scipy import stats
 import plotly.graph_objects as go
 pd.set_option('display.precision', 1)
-from pyergast import pyergast
+##from pyergast import pyergast
 import requests
 from plotly.offline import init_notebook_mode, iplot
 
