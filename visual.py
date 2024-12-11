@@ -30,8 +30,6 @@ print(lap_times.head())
 print("\nPit Stops Data:")
 print(pit_stops.head())
 
-# print("\nColumns in standing dataframe:", standings.columns)
-
 #plotting constructor standings
 plt.figure(figsize=(10, 6))
 standings_top_10 = standings.head(10)
@@ -84,7 +82,7 @@ plt.show()
 #plotting Pit Stops
 plt.figure(figsize=(10, 6))
 pit_stops_count = pit_stops.groupby('driverId')['stop'].nunique().reset_index()
-sns.barplot(data=pit_stops_count, x='driverId', y='stop',hue='driverId', palette='magma')
+sns.barplot(data=pit_stops_count, x='driverId', y='stop',hue='driverId', palette='viridis')
 plt.title('Total pit stops per driver')
 plt.xlabel('Driver ID')
 plt.ylabel('Total pit stops')
